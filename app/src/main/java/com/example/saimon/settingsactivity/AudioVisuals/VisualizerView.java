@@ -15,24 +15,24 @@ import com.example.saimon.settingsactivity.R;
 
     public class VisualizerView extends View {
 
-        // These constants determine how much of a percentage of the audio frequencies each shape
-        // represents. For example, the bass circle represents the bottom 10% of the frequencies.
+        // Эти константы определяют, сколько процентов звуковых частот каждой фигуры
+        // представляет. Например, басовый круг представляет нижние 10% частот.
         private static final float SEGMENT_SIZE = 100.f;
         private static final float BASS_SEGMENT_SIZE = 10.f / SEGMENT_SIZE;
         private static final float MID_SEGMENT_SIZE = 30.f / SEGMENT_SIZE;
         private static final float TREBLE_SEGMENT_SIZE = 60.f / SEGMENT_SIZE;
 
-        // The minimum size of the shape, by default, before scaling
+        // Минимальный размер фигуры по умолчанию перед масштабированием
         private static final float MIN_SIZE_DEFAULT = 50;
 
-        // This multiplier is used to make the frequency jumps a little more visually pronounced
+        // Этот множитель используется, чтобы сделать скачки частоты немного более визуально выраженными
         private static final float BASS_MULTIPLIER = 1.5f;
         private static final float MID_MULTIPLIER = 3;
         private static final float TREBLE_MULTIPLIER = 5;
 
         private static final float REVOLUTIONS_PER_SECOND = .3f;
 
-        // Controls the Size of the circle each shape makes
+        // Управляет размером окружности каждой фигуры
         private static final float RADIUS_BASS = 20 / 100.f;
         private static final float RADIUS_MID = 60 / 100.f;
         private static final float RADIUS_TREBLE = 90 / 100.f;
@@ -67,8 +67,8 @@ import com.example.saimon.settingsactivity.R;
             mBytes = null;
             TrailedShape.setMinSize(MIN_SIZE_DEFAULT);
 
-            // Create each of the shapes and define how they are drawn on screen
-            // Make bass circle
+            //Создайте каждую из фигур и определите, как они будут отображаться на экране
+            // Сделать басовый круг
             mBassCircle = new TrailedShape(BASS_MULTIPLIER) {
                 @Override
                 protected void drawThisShape(float shapeCenterX, float shapeCenterY, float currentSize, Canvas canvas, Paint paint) {
